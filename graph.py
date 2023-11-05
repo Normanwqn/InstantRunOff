@@ -1,3 +1,4 @@
+"""A sample script to generate a Sankey diagram for Instant Runoff Voting."""
 import plotly.graph_objects as go
 
 def generate_sankey(transfer_log, candidates):

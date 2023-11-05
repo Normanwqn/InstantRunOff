@@ -45,7 +45,7 @@ def generate_ballots_csv(file_name: str) -> list[list[int]]:
             csv_reader = csv.reader(file)
              # Read the header row to get column names
             _header = next(csv_reader)
-            print("Ballots:")
+            print("Ballots")
             for i, row in enumerate(csv_reader):
                 if row:
                     print(row[0], " ", end='')
@@ -117,7 +117,7 @@ def eliminate_candidate(vote_counts, remaining_candidates):
     
     return remaining_candidates, newly_eliminated_candidates
 
-def get_winner(ballots, candidate_list):
+def get_winner(ballots, candidate_list) -> default(dict), str:
     """Determine the winner of an instant runoff election."""
     remaining_candidates = set(candidate_list)  # Start with all candidates
     eliminated_candidates = set()
@@ -154,7 +154,7 @@ def get_winner(ballots, candidate_list):
         redistribute_votes(ballots, eliminated_candidates, transfer_log, current_round)
         
         current_round += 1
-        print("\n")  # Print a newline for better readability
+        print()  # Print a newline for better readability
 
 def generate_sankey(transfer_log, candidates, save_file_path, show_figure):
     """Generate a sankey diagram.
