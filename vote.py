@@ -117,7 +117,7 @@ def eliminate_candidate(vote_counts, remaining_candidates):
     
     return remaining_candidates, newly_eliminated_candidates
 
-def get_winner(ballots, candidate_list) -> default(dict), str:
+def get_winner(ballots, candidate_list):
     """Determine the winner of an instant runoff election."""
     remaining_candidates = set(candidate_list)  # Start with all candidates
     eliminated_candidates = set()
